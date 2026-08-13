@@ -4,10 +4,11 @@ import Username from "../Features/user/Username.jsx";
 
 function Header(){
     return (
-        <header className="bg-yellow-500 px-4 py-3 uppercase border-b border-stone-200 sm:px-6">
+        <header className="bg-yellow-500 px-4 py-3 uppercase border-b border-stone-200 sm:px-6 flex justify-between items-center ">
             <Link to="/" className="tracking-widest">Fast React Pizza Co.</Link>
-        <SearchOrder/>
 <Username/>
+        <SearchOrder/>
+
         </header>
     )
 }

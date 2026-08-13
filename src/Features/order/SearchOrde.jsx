@@ -10,7 +10,7 @@ function handleSubmit(e){
     setQuery("")
 }
     return (<form onSubmit={handleSubmit}> 
-        <input placeholder="Search Order"  value={query} onChange={(e)=>setQuery(e.target.value)}/>
+        <input placeholder="Search Order"  value={query} onChange={(e)=>setQuery(e.target.value)} className="border border-stone-200 bg-white rounded px-2 py-2"/>
     </form>
     )
 }

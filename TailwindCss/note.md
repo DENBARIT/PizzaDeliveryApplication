@@ -21,3 +21,4 @@ export default {
 ->hidden=>for display none,block,inline,inline-block  .
 =>media query=>for the given media queries,sm,md
 =>This means as the margin reaches sm then the margin will overwrite the default my-10 to my-16
+=>for flex=>use flex to display,align items =>to align vertically,
