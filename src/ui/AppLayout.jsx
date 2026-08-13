@@ -14,8 +14,11 @@ function AppLayout(){
             <Header/>
             <div className="overflow-y-auto">
             <main className=" mx-auto max-w-3xl">
+            {/* <main > */}
+       
         <Outlet/>
-            </main></div>
+            </main>
+            </div>
             <CartOverview/>
         </div>
     )
