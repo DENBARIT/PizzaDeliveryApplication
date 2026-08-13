@@ -84,6 +84,7 @@ function Order() {
   );
 }
 // here we cannot use useParama inside the loader function, because it's not a component, so we need to use params from the loader function
+// the useparams return params={objectid:121312}
 export async function loader({params}){
   const order=await getOrder(params.orderId)
   return order

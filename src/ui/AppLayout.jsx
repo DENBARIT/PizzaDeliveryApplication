@@ -8,7 +8,7 @@ function AppLayout(){
     const isLoading=navigation.state==="loading";
 
     return (
-        <div className="layout">
+        <div className="px:4 sm:px-6">
             {isLoading && <Loader/>}
             <Header/>
             <main>

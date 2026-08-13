@@ -9,13 +9,14 @@ function CreateUser() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <p>👋 Welcome! Please start by telling us your name:</p>
+      <p className="mb-4 text-sm text-stone-600 md:text-base">👋 Welcome! Please start by telling us your name:</p>
 
       <input
         type="text"
         placeholder="Your full name"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
+        className="border border-stone-200 rounded px-2 py-2 w-72 h-10"
       />
 
       {username !== '' && (

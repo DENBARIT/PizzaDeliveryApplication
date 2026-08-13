@@ -19,3 +19,5 @@ export default {
 ->px,py,pb,pt=for padding
 ->mb,mx,my=>for margin 
 ->hidden=>for display none,block,inline,inline-block  .
+=>media query=>for the given media queries,sm,md
+=>This means as the margin reaches sm then the margin will overwrite the default my-10 to my-16
