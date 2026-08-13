@@ -10,3 +10,7 @@ it is utility first approach
 export default {
   plugins: ["prettier-plugin-tailwindcss"],
 }
+
+>For font-size->text-xl,text-lg,text-[100px]
+=>for font-weight=> font-semibold
+=>for letter-spacing=>tracking-widest,tracking-[5px]
