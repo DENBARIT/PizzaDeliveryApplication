@@ -3,8 +3,13 @@ import { Form } from "react-router-dom";
 import { createOrder } from "../../services/apiRestaurant.js";
 import { redirect } from "react-router-dom";
 import { useActionData } from "react-router-dom";
+import Button from "../../ui/Button.jsx";
 import { useNavigation } from "react-router-dom";
 // https://uibakery.io/regex-library/phone-number
+const isValidPhone = (str) =>
+  /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(
+    str
+  );
 
 
 const fakeCart = [
@@ -94,21 +99,9 @@ focus:ring-yellow-400     "
 
         <div>
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
-          <button disabled={true}
-          className="
-          inline-block rounded-full
-          bg-yellow-400 px-4 py-3 font-semibold
-          uppercase tracking-wide text-stone-800 transition-colors 
-          duration-300 hover:bg-yellow-300 
-          focus:bg-yellow-300 
-          focus:outline-none focus:ring
-          focus:ring-offset-2
-          focus:ring-yellow-300
-          disabled:cursor-not-allowed
-        active:bg-yellow-900  
-        " >
+          <Button disabled={isSubmitting} >
             {isSubmitting ? "Placing order..." : "Order now"}
-          </button>
+          </Button>
         </div>
       </Form>
     </div>
