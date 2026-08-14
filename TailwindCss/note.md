@@ -23,4 +23,5 @@ export default {
 =>This means as the margin reaches sm then the margin will overwrite the default my-10 to my-16
 =>for flex=>use flex to display,align items =>to align vertically,
 ->for grid,gap-x-4,gap-y-6,bg-red-400,grid-cols,grid-rows,h-screen=>to fill the whole screen
--=>using divide=>we add a divider 
+-=>using divide=>we add a divider
+emoji-as a fav-icon=>css-tricks 
