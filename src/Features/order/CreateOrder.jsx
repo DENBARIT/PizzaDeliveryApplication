@@ -5,6 +5,7 @@ import { redirect } from "react-router-dom";
 import { useActionData } from "react-router-dom";
 import Button from "../../ui/Button.jsx";
 import { useNavigation } from "react-router-dom";
+import { useSelector } from "react-redux";
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
   /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(
@@ -41,7 +42,7 @@ function CreateOrder() {
   const navigation=useNavigation();
   const isSubmitting=navigation.state==="submitting";
 
-
+const username=useSelector((state)=>state.user.username)
   const cart = fakeCart;
   // If your action function finishes and returns some data (like backend validation errors or an order confirmation ID), we can read that data using the useActionData hook:
 const formErrors=useActionData();
@@ -56,7 +57,7 @@ const formErrors=useActionData();
         <div className="mb-5 flex gap-2 flex-col sm:flex-row sm:items-center grow">
           <label className="sm:basis-40"> First Name</label>
          <div className="grow" >
-          <input type="text" name="customer" className="input w-full" required />
+          <input type="text" name="customer" className="input w-full" defaultValue={username} required />
         </div></div>
 
         <div className="mb-5 flex gap-2 flex-col sm:flex-row sm:items-center ">
