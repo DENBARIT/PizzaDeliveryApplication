@@ -33,7 +33,11 @@ const cartSlice=createSlice({
 
             const item=state.cart.find((item)=>item.pizzaId===action.payload);
             item.quantity--;
-            item.totalPrice=item.quantity*item.unitPrice; 
+            item.totalPrice=item.quantity*item.unitPrice;
+            if(item.quantity===0){
+                // HERE We donot require to dispatch the pizzaId agian ,since inside this function the action has a payload so that we dispatch the function
+            cartSlice.caseReducers.deleteItem(state,action)
+            } 
         
         },
         clearCart(state){
@@ -49,3 +53,4 @@ export const getTotalCartQuantity=(state)=>state.cart.cart.reduce((sum,item)=>su
 export const getTotalCartPrice=(state)=>state.cart.cart.reduce((sum,item)=>sum+item.totalPrice,0);
 export const getCart=(state)=>state.cart.cart;
 export const getCurrentQuantityById=(id)=>(state)=>(state.cart.cart.find(item=>item.pizzaId===id)?.quantity??0) 
+// ###Remark is that the reducers can change state while the  the reducer selectors donot change state it is only to get and read the states

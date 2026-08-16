@@ -25,3 +25,16 @@ export default {
 ->for grid,gap-x-4,gap-y-6,bg-red-400,grid-cols,grid-rows,h-screen=>to fill the whole screen
 -=>using divide=>we add a divider
 emoji-as a fav-icon=>css-tricks 
+
+<10/24>
+here export async function action({request}){
+  const formData=await request.formData();
+  const data=Object.fromEntries(formData);
+  const order={
+...data,
+cart:JSON.parse(data.cart),
+// we can directly use priority data.priority or but the data.priority gives a string  so we compare the string with the string "true"
+ 
+priority:data.priority==="true",
+  };
+   <!-- since the data form responds with string we cannot directly use the priority=data.priority -->

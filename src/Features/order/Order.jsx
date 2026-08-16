@@ -48,7 +48,7 @@ function Order() {
   const {
     id,
     status,
-    priority,
+    priority=true,
     priorityPrice,
     orderPrice,
     estimatedDelivery,
