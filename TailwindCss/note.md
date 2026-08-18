@@ -38,3 +38,9 @@ cart:JSON.parse(data.cart),
 priority:data.priority==="true",
   };
    <!-- since the data form responds with string we cannot directly use the priority=data.priority -->
+
+    - - - 13/24 - - - 
+    for this code if(!fetcher.data && fetcher.state==="idle")
+    fetcher.load(`/menu`);
+  },[fetcher]);
+  here the logic is that if there isnot data being fetched and the fetcher state is idle not loading then load the data from the fetcher 

@@ -129,16 +129,7 @@ focus:ring-yellow-400     "
           </label>
         </div>
 
-        <div>
-          <input type="hidden" name="cart" value={JSON.stringify(cart)} />
-          <input type="hidden" name="position" value={position.latitude&&position.longitude?
-
-          `${position.latitude},${position.longitude}`:""
-          } />
-          <Button disabled={isSubmitting||isLoadingAddress} type="primary">
-            {isSubmitting ? "Placing order..." : `Order now from ${formatCurrency(totalPrice)}`}
-          </Button>
-        </div>
+        
       </Form>
     </div>
   );
