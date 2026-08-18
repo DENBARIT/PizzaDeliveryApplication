@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { useLoaderData} from "react-router-dom";
 import OrderItem from "./OrderItem.jsx";
 import { useFetcher } from "react-router-dom";
+import UpdateOrder from "./UpdateOrder.jsx";
 // const order = {
 //   id: "ABCDEF",
 //   customer: "Jonas",
@@ -94,6 +95,8 @@ if(!fetcher.data && fetcher.state==="idle")
         {priority && <p className="text-sm font-medium text-stone-600">Price priority: {formatCurrency(priorityPrice)}</p>}
         <p  className="font-bold">To pay on delivery: {formatCurrency(orderPrice + priorityPrice)}</p>
       </div>
+      {!priority && <UpdateOrder order={order}/>
+      }
     </div>
   );
 }

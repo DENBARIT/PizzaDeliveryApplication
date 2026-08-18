@@ -125,11 +125,25 @@ focus:ring-yellow-400     "
             onChange={(e) => setWithPriority(e.target.checked)}
           />
           <label htmlFor="priority" className="font-medium">
-            Want to yo give your order priority?
+            Want to you give your order priority?
           </label>
         </div>
-
-        
+        <div>
+  <input type="hidden" name="cart" value={JSON.stringify(cart)} />
+          <input
+            type="hidden"
+            name="position"
+            value={
+              position.longitude && position.latitude
+                ? `${position.latitude},${position.longitude}`
+                : ''
+            }
+          />
+          <Button disabled={isSubmitting || isLoadingAddress} type="primary" >
+            {isSubmitting
+              ? 'Placing order....'
+              : `Order now from ${formatCurrency(totalPrice)}`}
+          </Button></div>
       </Form>
     </div>
   );
@@ -154,7 +168,8 @@ if(Object.keys(errors).length>0){
 }
 // Special hack to dispatch  a clearCart reducer
 store.dispatch(clearCart());
-  // Here we cannot use the naviagate  
+  // Here we cannot use the naviagate 
+  // this comes from the backend 
   return redirect(`/order/${newOrder.id}`);
 
 }

@@ -44,3 +44,5 @@ priority:data.priority==="true",
     fetcher.load(`/menu`);
   },[fetcher]);
   here the logic is that if there isnot data being fetched and the fetcher state is idle not loading then load the data from the fetcher 
+
+  <!-- useFetcher -->

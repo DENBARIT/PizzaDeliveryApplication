@@ -23,6 +23,7 @@ async function fetchAddress() {
   // 3) Then we return an object with the data that we are interested in
   return { position, address };
 });
+console.log(fetchAddress);
 const initialState = {
   username:"",
   status: "idle",
